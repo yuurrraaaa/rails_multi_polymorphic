@@ -1,0 +1,98 @@
+<%= form_with(model: research) do |form| %>
+  <% if research.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(research.errors.count, "error") %> prohibited this research from being saved:</h2>
+
+      <ul>
+        <% research.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :procedure_id %>
+    <%= form.text_field :procedure_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :procedure_type %>
+    <%= form.text_field :procedure_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_time %>
+    <%= form.datetime_select :end_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :doctor %>
+    <%= form.text_field :doctor %>
+  </div>
+
+  <h5>Procedure</h5>
+  <%= form.fields_for :procedure, @research.procedure do |f| %>
+    <div class="field">
+      <%= f.label :test1 %>
+      <%= f.text_field :test1 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :test2 %>
+      <%= f.text_field :test2 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :test3 %>
+      <%= f.text_field :test3 %>
+    </div>
+  <% end %>
+
+  <%= form.fields_for :vector_data, @research.vector_data do |  f| %>
+  <h5>Vector Data</h5>
+
+    <div class="field">
+      <%= f.label :data_id %>
+      <%= f.text_field :data_id %>
+    </div>
+
+    <div class="field">
+      <%= f.label :data_type %>
+      <%= f.text_field :data_type %>
+    </div>
+
+
+    <%= f.fields_for :data do |n| %>
+    <h5>Data</h5>
+      <div class="field">
+        <%= n.label :test1 %>
+        <%= n.text_field :test1 %>
+      </div>
+
+      <div class="field">
+        <%= n.label :test2 %>
+        <%= n.text_field :test2 %>
+      </div>
+
+      <div class="field">
+        <%= n.label :test3 %>
+        <%= n.text_field :test3 %>
+      </div>
+
+      <div class="field">
+        <%= n.label :teast4 %>
+        <%= n.text_field :teast4 %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

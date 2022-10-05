@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Aad Data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Test1</th>
+      <th>Test2</th>
+      <th>Test3</th>
+      <th>Teast4</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aad_data.each do |aad_datum| %>
+      <tr>
+        <td><%= aad_datum.test1 %></td>
+        <td><%= aad_datum.test2 %></td>
+        <td><%= aad_datum.test3 %></td>
+        <td><%= aad_datum.teast4 %></td>
+        <td><%= link_to 'Show', aad_datum %></td>
+        <td><%= link_to 'Edit', edit_aad_datum_path(aad_datum) %></td>
+        <td><%= link_to 'Destroy', aad_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aad Datum', new_aad_datum_path %>

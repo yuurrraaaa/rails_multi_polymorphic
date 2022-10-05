@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Research:</strong>
+  <%= @vector_datum.research_id %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @vector_datum.data_id %>
+</p>
+
+<%= link_to 'Edit', edit_vector_datum_path(@vector_datum) %> |
+<%= link_to 'Back', vector_data_path %>

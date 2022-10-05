@@ -1,0 +1,37 @@
+<%= form_with(model: aad_datum) do |form| %>
+  <% if aad_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(aad_datum.errors.count, "error") %> prohibited this aad_datum from being saved:</h2>
+
+      <ul>
+        <% aad_datum.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :test1 %>
+    <%= form.text_field :test1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :test2 %>
+    <%= form.text_field :test2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :test3 %>
+    <%= form.text_field :test3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :teast4 %>
+    <%= form.text_field :teast4 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

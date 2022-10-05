@@ -1,0 +1,2 @@
+module AadsHelper
+end

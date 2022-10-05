@@ -1,0 +1,32 @@
+<%= form_with(model: aad) do |form| %>
+  <% if aad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(aad.errors.count, "error") %> prohibited this aad from being saved:</h2>
+
+      <ul>
+        <% aad.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :test1 %>
+    <%= form.text_field :test1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :test2 %>
+    <%= form.text_field :test2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :test3 %>
+    <%= form.text_field :test3 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

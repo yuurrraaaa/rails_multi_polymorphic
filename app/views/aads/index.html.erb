@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Aads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Test1</th>
+      <th>Test2</th>
+      <th>Test3</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aads.each do |aad| %>
+      <tr>
+        <td><%= aad.test1 %></td>
+        <td><%= aad.test2 %></td>
+        <td><%= aad.test3 %></td>
+        <td><%= link_to 'Show', aad %></td>
+        <td><%= link_to 'Edit', edit_aad_path(aad) %></td>
+        <td><%= link_to 'Destroy', aad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aad', new_aad_path %>
